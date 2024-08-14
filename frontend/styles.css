@@ -1,0 +1,326 @@
+/* 공통 스타일 */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #101010;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  color: #e62429;
+}
+
+/* 히어로 섹션 */
+.hero {
+  background-image: url("hero_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #e62429;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ff4c4c;
+}
+
+/* 최신 영화 섹션 */
+.latest-movies {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.movie-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #e62429;
+}
+
+/* 평가가 좋은 영화 섹션 */
+.top-rated-movies {
+  padding: 50px 0;
+  background-color: #121212;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movie-list-item {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-list-item img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.movie-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #e62429;
+}
+
+/* 인기 영화 차트 섹션 */
+.popular-movies {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.movie-chart {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.movie-chart-item {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.movie-chart-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-chart-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-info {
+  padding: 20px;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #e62429;
+}
+
+/* 뉴스 섹션 */
+.marvel-news {
+  background-color: #121212;
+  padding: 50px 0;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  display: flex;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.news-item:hover {
+  transform: scale(1.05);
+}
+
+.news-item img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.news-content {
+  padding: 20px;
+}
+
+.news-content h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #e62429;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #e62429;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.read-more:hover {
+  background-color: #ff4c4c;
+}
+
+/* 유튜버 리뷰 섹션 */
+.youtuber-reviews {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.youtuber-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.youtuber-item {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.youtuber-item:hover {
+  transform: scale(1.05);
+}
+
+.youtuber-thumbnail img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.youtuber-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.youtuber-content h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #e62429;
+}
+
+/* 푸터 */
+footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e62429;
+}

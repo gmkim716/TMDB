@@ -1,0 +1,377 @@
+/* 공통 스타일 */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #101010;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  color: #e62429;
+}
+
+/* 영화 정보 섹션 */
+.movie-info {
+  padding: 50px 0;
+}
+
+.movie-info .container {
+  display: flex;
+  gap: 20px;
+}
+
+.movie-info img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.movie-info-details {
+  max-width: 600px;
+}
+
+.movie-info-details h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #e62429;
+}
+
+.movie-info-details p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+/* 출연진 섹션 */
+.cast {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.cast h2 {
+  font-size: 2em;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+#cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cast-member {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.cast-member img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cast-member p {
+  margin: 10px 0 0;
+  font-size: 1em;
+}
+
+/* 유튜브 비디오 섹션 */
+.youtube-videos {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.youtube-videos h2 {
+  font-size: 2em;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+.youtube-videos #video-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.youtube-videos iframe {
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+}
+
+/* 리뷰 섹션 */
+.reviews {
+  padding: 50px 0;
+}
+
+.reviews h2 {
+  font-size: 2em;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+.review-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pagination-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#reviews-per-page {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.filter-options {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: #e62429;
+}
+
+#review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-item {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-header .user-info img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.review-header .user-info p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.review-header .review-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.review-header .review-actions button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.review-header .review-actions button:hover {
+  color: #e62429;
+}
+
+.review-header .likes-dislikes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-header .likes-dislikes span {
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.review-body {
+  margin-top: 10px;
+}
+
+.review-body h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #e62429;
+}
+
+.review-body p {
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+.review-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-footer button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.review-footer button:hover {
+  color: #e62429;
+}
+
+/* 페이지네이션 컨트롤 */
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-controls button:hover {
+  background-color: #e62429;
+}
+
+/* 리뷰 작성 섹션 */
+.add-review {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.add-review h2 {
+  font-size: 2em;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+#review-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#review-form label {
+  font-size: 1.1em;
+}
+
+#review-form input,
+#review-form select,
+#review-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+#review-form button {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e62429;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#review-form button:hover {
+  background-color: #ff4c4c;
+}
+
+/* 푸터 */
+footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e62429;
+}

@@ -1,0 +1,161 @@
+/* 공통 스타일 */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #101010;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  color: #e62429;
+}
+
+/* 필터 옵션 */
+.filter-options {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: #e62429;
+  transform: translateY(-3px);
+}
+
+/* 영화 컬렉션 섹션 */
+.movie-collection {
+  padding: 50px 0;
+}
+
+.movie-collection h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #e62429;
+}
+
+.phase {
+  margin-bottom: 50px;
+}
+
+.phase h3 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.movie-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.movie-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-slider::-webkit-scrollbar-thumb {
+  background-color: #e62429;
+  border-radius: 10px;
+}
+
+.movie-slider::-webkit-scrollbar-track {
+  background-color: #2a2a2a;
+}
+
+.movie-poster {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-poster p {
+  padding: 15px;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.movie-poster:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* 푸터 */
+footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e62429;
+}

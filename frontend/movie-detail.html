@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 상세 정보</title>
+    <link rel="stylesheet" href="movie-detail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"
+            ><img src="marvelous_logo.png" alt="Marvelous Times"
+          /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="#">영화 리뷰</a></li>
+            <li><a href="#">평가하기</a></li>
+            <li><a href="characters.html">캐릭터 소개</a></li>
+            <li><a href="#">연락처</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="movie-info" class="movie-info">
+        <div class="container">
+          <!-- 영화 상세 정보가 여기에 로드됩니다 -->
+        </div>
+      </section>
+
+      <section id="cast" class="cast">
+        <div class="container">
+          <h2>출연진</h2>
+          <div id="cast-list">
+            <!-- 출연진 목록이 여기에 로드됩니다 -->
+          </div>
+        </div>
+      </section>
+
+      <section id="youtube-videos" class="youtube-videos">
+        <div class="container">
+          <h2>관련 유튜브 영상</h2>
+          <div id="video-list">
+            <!-- 유튜브 영상 리스트가 여기에 로드됩니다 -->
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews">
+        <div class="container">
+          <h2>관객 리뷰</h2>
+          <div class="review-controls">
+            <div class="pagination-options">
+              <label for="reviews-per-page">보기:</label>
+              <select id="reviews-per-page" onchange="setReviewsPerPage()">
+                <option value="5">5개</option>
+                <option value="10">10개</option>
+                <option value="20">20개</option>
+                <option value="30">30개</option>
+              </select>
+            </div>
+            <div class="filter-options">
+              <button
+                class="filter-button active"
+                onclick="filterReviews('all')"
+              >
+                전체
+              </button>
+              <button class="filter-button" onclick="filterReviews(5)">
+                5점
+              </button>
+              <button class="filter-button" onclick="filterReviews(4)">
+                4점
+              </button>
+              <button class="filter-button" onclick="filterReviews(3)">
+                3점
+              </button>
+              <button class="filter-button" onclick="filterReviews(2)">
+                2점
+              </button>
+              <button class="filter-button" onclick="filterReviews(1)">
+                1점
+              </button>
+            </div>
+          </div>
+          <div id="review-list">
+            <!-- 리뷰 리스트가 여기에 로드됩니다 -->
+          </div>
+          <div class="pagination-controls">
+            <button id="prev-page" onclick="prevPage()">이전</button>
+            <span id="current-page">1</span> / <span id="total-pages">1</span>
+            <button id="next-page" onclick="nextPage()">다음</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="add-review" class="add-review">
+        <div class="container">
+          <h2>리뷰 작성하기</h2>
+          <form id="review-form">
+            <label for="review-title">제목:</label>
+            <input
+              type="text"
+              id="review-title"
+              name="title"
+              placeholder="리뷰 제목 (선택 사항)"
+            />
+            <label for="review-rating">평점:</label>
+            <select id="review-rating" name="rating" required>
+              <option value="5">5점</option>
+              <option value="4">4점</option>
+              <option value="3">3점</option>
+              <option value="2">2점</option>
+              <option value="1">1점</option>
+            </select>
+            <label for="review-text">리뷰:</label>
+            <textarea id="review-text" name="text" rows="4" required></textarea>
+            <button type="submit">리뷰 남기기</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
+          <p><a href="#">개인정보 처리방침</a> | <a href="#">이용약관</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="movie-detail.js"></script>
+  </body>
+</html>

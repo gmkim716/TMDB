@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvelous Times - 영화 컬렉션</title>
+    <link rel="stylesheet" href="movie-collection.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="marvelous_logo.png" alt="Marvelous Times" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="#">영화 리뷰</a></li>
+            <li><a href="#">평가하기</a></li>
+            <li><a href="characters.html">캐릭터 소개</a></li>
+            <li><a href="#">연락처</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="filter-options">
+        <div class="container">
+          <div class="button-group">
+            <button
+              class="filter-button active"
+              onclick="filterMovies('story')"
+            >
+              스토리 흐름
+            </button>
+            <button class="filter-button" onclick="filterMovies('popularity')">
+              인기순
+            </button>
+            <button class="filter-button" onclick="filterMovies('genre')">
+              장르별
+            </button>
+            <button class="filter-button" onclick="filterMovies('year')">
+              개봉연도별
+            </button>
+            <button class="filter-button" onclick="filterMovies('character')">
+              캐릭터별
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="movie-collection" class="movie-collection">
+        <div class="container">
+          <h2>마블 영화 컬렉션</h2>
+          <div id="movies">
+            <!-- 스토리 흐름에 따른 페이즈별 영화 목록이 여기에 동적으로 로드됩니다 -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
+          <p><a href="#">개인정보 처리방침</a> | <a href="#">이용약관</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
