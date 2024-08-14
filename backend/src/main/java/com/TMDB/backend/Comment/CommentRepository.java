@@ -1,8 +1,8 @@
-package com.TMDB.backend.Member;
+package com.TMDB.backend.Comment;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }

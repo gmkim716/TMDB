@@ -8,6 +8,6 @@ public class BackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
-		System.out.println("main 메서드가 실행되었습니다.");
+		System.out.println("TMDB 프로젝트의 Backend가 실행되었습니다.");
 	}
 }
