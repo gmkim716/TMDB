@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvelous Times - 마이페이지</title>
+    <link rel="stylesheet" href="my-page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"
+            ><img src="marvelous_logo.png" alt="Marvelous Times"
+          /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="#">영화 리뷰</a></li>
+            <li><a href="#">평가하기</a></li>
+            <li><a href="characters.html">캐릭터 소개</a></li>
+            <li><a href="#">연락처</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="mypage">
+        <div class="container">
+          <h1>마이페이지</h1>
+          <div class="profile-section">
+            <div class="profile-picture-container">
+              <div class="profile-picture default">
+                <img
+                  id="profile-image"
+                  src="default-profile.png"
+                  alt="프로필 사진"
+                />
+                <input type="file" id="profile-upload" accept="image/*" />
+              </div>
+              <button id="upload-button" class="btn-upload">
+                프로필 사진 등록하기
+              </button>
+            </div>
+            <div class="user-info">
+              <form id="profile-form">
+                <div class="input-group">
+                  <label for="username">사용자 이름</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value="사용자"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="email">이메일</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="user@example.com"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <label for="bio">소개글</label>
+                  <textarea
+                    id="bio"
+                    name="bio"
+                    rows="4"
+                    placeholder="간단한 소개글을 작성하세요..."
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn-primary">저장</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
+          <p><a href="#">개인정보 처리방침</a> | <a href="#">이용약관</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="my-page.js"></script>
+  </body>
+</html>

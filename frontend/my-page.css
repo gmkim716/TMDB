@@ -1,0 +1,174 @@
+/* 공통 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #101010;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  color: #e62429;
+}
+
+/* 마이페이지 섹션 */
+.mypage {
+  padding: 50px 0;
+  color: #ffffff;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #333333;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-picture input[type="file"] {
+  display: none;
+}
+
+.btn-upload {
+  background-color: #e62429;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px; /* 버튼과 프로필 사진 사이에 여백 추가 */
+}
+
+.btn-upload:hover {
+  background-color: #ff4c4c;
+  transform: translateY(-2px);
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #dddddd;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #333333;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #e62429;
+  outline: none;
+  background-color: #3a3a3a;
+}
+
+.btn-primary {
+  background-color: #e62429;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #ff4c4c;
+  transform: translateY(-2px);
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e62429;
+}
