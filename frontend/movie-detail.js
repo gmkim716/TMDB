@@ -147,7 +147,9 @@ function renderReviews() {
                     <img src="${review.profile}" alt="${review.username}">
                     <div>
                         <p>${review.username}</p>
-                        <p>${review.date}</p>
+                        <p class="review-time" data-time="${
+                          review.date
+                        }">${timeAgo(review.date)}</p>
                     </div>
                 </div>
                 <div class="review-actions">
@@ -164,22 +166,35 @@ function renderReviews() {
                 <p>${review.text}</p>
             </div>
             <div class="review-footer">
+                <button class="toggle-comments" onclick="commentOnReview(${
+                  start + filteredReviews.indexOf(review)
+                })">
+                    댓글 보기
+                </button>
                 <div class="likes-dislikes">
                     <button onclick="likeReview(${
                       start + filteredReviews.indexOf(review)
                     })">👍</button>
                     <span>${review.likes}</span>
-                    ${
-                      isReviewOwner(review)
-                        ? `<button onclick="dislikeReview(${
-                            start + filteredReviews.indexOf(review)
-                          })">👎</button><span>${review.dislikes}</span>`
-                        : ""
-                    }
+                    <button onclick="dislikeReview(${
+                      start + filteredReviews.indexOf(review)
+                    })">👎</button>
+                    <span>${review.dislikes}</span>
                 </div>
-                <button onclick="commentOnReview(${
-                  start + filteredReviews.indexOf(review)
-                })">댓글 남기기 (${review.comments})</button>
+            </div>
+            <div class="comments-section" style="display: none;">
+                <!-- 댓글 리스트가 여기에 표시됩니다 -->
+                <div class="comment">
+                    <p><strong>사용자1:</strong> 댓글 내용 1</p>
+                </div>
+                <div class="comment">
+                    <p><strong>사용자2:</strong> 댓글 내용 2</p>
+                </div>
+                <form class="add-comment-form">
+                    <label for="new-comment">댓글 남기기:</label>
+                    <textarea id="new-comment" rows="2" placeholder="댓글을 입력하세요..."></textarea>
+                    <button type="submit">댓글 남기기</button>
+                </form>
             </div>
         </div>
     `
@@ -233,13 +248,27 @@ function dislikeReview(index) {
 }
 
 function commentOnReview(index) {
-  // 댓글 남기기 기능 추가 예정
-  alert("댓글 남기기 기능이 준비 중입니다.");
+  const reviewItem = document.querySelectorAll(".review-item")[index];
+  const commentsSection = reviewItem.querySelector(".comments-section");
+
+  if (
+    commentsSection.style.display === "none" ||
+    commentsSection.style.display === ""
+  ) {
+    commentsSection.style.display = "block";
+    reviewItem.querySelector(".toggle-comments").textContent = "댓글 숨기기";
+  } else {
+    commentsSection.style.display = "none";
+    reviewItem.querySelector(".toggle-comments").textContent = "댓글 보기";
+  }
 }
 
 function editReview(index) {
-  // 리뷰 수정 기능 추가 예정
-  alert("리뷰 수정 기능이 준비 중입니다.");
+  const newText = prompt("리뷰를 수정하세요:", reviews[index].text);
+  if (newText !== null) {
+    reviews[index].text = newText;
+    renderReviews();
+  }
 }
 
 function deleteReview(index) {
@@ -252,6 +281,22 @@ function deleteReview(index) {
 function isReviewOwner(review) {
   // 현재 사용자가 리뷰 작성자인지 확인하는 로직
   return true; // 예시로 모든 리뷰에 대해 수정/삭제/싫어요 권한 부여
+}
+
+function timeAgo(date) {
+  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+  let interval = Math.floor(seconds / 86400);
+
+  if (interval > 7) {
+    return new Date(date).toLocaleDateString(); // 7일 이상이면 날짜로 표시
+  }
+
+  if (interval >= 1) return interval + "일 전";
+  interval = Math.floor(seconds / 3600);
+  if (interval >= 1) return interval + "시간 전";
+  interval = Math.floor(seconds / 60);
+  if (interval >= 1) return interval + "분 전";
+  return Math.floor(seconds) + "초 전";
 }
 
 // 리뷰 작성 폼 처리
@@ -274,4 +319,10 @@ document.getElementById("review-form").addEventListener("submit", function (e) {
   reviews.push(newReview);
   filterReviews("all");
   this.reset();
+});
+
+// 예제: 댓글 작성 시간을 상대 시간 형식으로 표시
+document.querySelectorAll(".review-time").forEach(function (element) {
+  const date = element.getAttribute("data-time");
+  element.textContent = timeAgo(date);
 });

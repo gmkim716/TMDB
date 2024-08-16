@@ -96,6 +96,53 @@
           </div>
           <div id="review-list">
             <!-- 리뷰 리스트가 여기에 로드됩니다 -->
+            <div class="review-item">
+              <div class="review-header">
+                <div class="user-info">
+                  <img src="user-profile.jpg" alt="User Profile" />
+                  <p>Username</p>
+                </div>
+                <div class="review-actions">
+                  <button>수정</button>
+                  <button>삭제</button>
+                </div>
+              </div>
+
+              <div class="review-body">
+                <h3>리뷰 제목</h3>
+                <p>리뷰 내용</p>
+              </div>
+
+              <div class="review-footer">
+                <button class="toggle-comments" onclick="toggleComments(this)">
+                  댓글 보기
+                </button>
+                <div class="likes-dislikes">
+                  <button>좋아요</button>
+                  <span>15</span>
+                  <button>싫어요</button>
+                  <span>3</span>
+                </div>
+              </div>
+
+              <div class="comments-section" style="display: none">
+                <div class="comment">
+                  <p><strong>사용자1:</strong> 댓글 내용 1</p>
+                </div>
+                <div class="comment">
+                  <p><strong>사용자2:</strong> 댓글 내용 2</p>
+                </div>
+                <form class="add-comment-form">
+                  <label for="new-comment">댓글 남기기:</label>
+                  <textarea
+                    id="new-comment"
+                    rows="2"
+                    placeholder="댓글을 입력하세요..."
+                  ></textarea>
+                  <button type="submit">댓글 남기기</button>
+                </form>
+              </div>
+            </div>
           </div>
           <div class="pagination-controls">
             <button id="prev-page" onclick="prevPage()">이전</button>

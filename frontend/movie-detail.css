@@ -215,6 +215,11 @@ nav ul li a:hover {
   gap: 10px;
 }
 
+.review-header .review-actions {
+  display: flex;
+  gap: 10px;
+}
+
 .review-header .user-info img {
   border-radius: 50%;
   width: 40px;
@@ -227,11 +232,6 @@ nav ul li a:hover {
   font-size: 1em;
 }
 
-.review-header .review-actions {
-  display: flex;
-  gap: 10px;
-}
-
 .review-header .review-actions button {
   background: none;
   border: none;
@@ -242,17 +242,6 @@ nav ul li a:hover {
 
 .review-header .review-actions button:hover {
   color: #e62429;
-}
-
-.review-header .likes-dislikes {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.review-header .likes-dislikes span {
-  font-size: 1em;
-  margin-left: 5px;
 }
 
 .review-body {
@@ -277,7 +266,13 @@ nav ul li a:hover {
   align-items: center;
 }
 
-.review-footer button {
+.review-footer .likes-dislikes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-footer .likes-dislikes button {
   background: none;
   border: none;
   color: #ffffff;
@@ -285,8 +280,67 @@ nav ul li a:hover {
   font-size: 0.9em;
 }
 
-.review-footer button:hover {
+.review-footer .likes-dislikes button:hover {
   color: #e62429;
+}
+
+.review-footer .likes-dislikes span {
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.toggle-comments {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.toggle-comments:hover {
+  background-color: #e62429;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #3a3a3a;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.add-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-comment-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.add-comment-form button {
+  background-color: #e62429;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-comment-form button:hover {
+  background-color: #ff4c4c;
 }
 
 /* 페이지네이션 컨트롤 */
