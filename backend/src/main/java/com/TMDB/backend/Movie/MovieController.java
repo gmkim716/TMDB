@@ -63,4 +63,5 @@ public class MovieController {
       return ResponseEntity.badRequest().body("Upcoming 영화 정보를 가져오는 데 실패했습니다.");
     }
   }
+
 }

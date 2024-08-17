@@ -24,6 +24,7 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  private Long movieId;
   private String title;
 
   @Lob  // Large Object, 큰 덱스트나 바이너리 데이너를 저장

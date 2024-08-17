@@ -7,6 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class PostDto {
   private Long id;
+  private Long movieId;
   private String title;
   private String content;
   private Long writerId;
@@ -14,6 +15,7 @@ public class PostDto {
 
   public PostDto(Post post) {
     this.id = post.getId();
+    this.movieId = post.getMovieId();
     this.title = post.getTitle();
     this.content = post.getContent();
     this.writerId = post.getWriterId();

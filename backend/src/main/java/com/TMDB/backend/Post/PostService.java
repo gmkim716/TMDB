@@ -28,6 +28,7 @@ public class PostService {
   @Transactional
   public PostDto write(PostRequestDto postDto) {
     Post post = Post.builder()
+      .movieId(postDto.getMovieId())
       .title(postDto.getTitle())
       .content(postDto.getContent())
       .writerId(postDto.getWriterId())

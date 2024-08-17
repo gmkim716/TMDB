@@ -20,7 +20,6 @@ public class MovieService {
   private final OkHttpClient client = new OkHttpClient();
 
   public Response getNowPlayingMovies() throws IOException {
-
     String url = "https://api.themoviedb.org/3/movie/now_playing?language=" + language + "&page=1";
     Request request = new Request.Builder()
       .url(url)
@@ -28,7 +27,6 @@ public class MovieService {
       .addHeader("accept", "application/json")
       .addHeader("Authorization", "Bearer " + apiToken)
       .build();
-
     return client.newCall(request).execute();
   }
 
@@ -39,7 +37,6 @@ public class MovieService {
       .addHeader("accept", "application/json")
       .addHeader("Authorization", "Bearer " + apiToken)
       .build();
-
     return client.newCall(request).execute();
   }
 
@@ -50,7 +47,6 @@ public class MovieService {
       .addHeader("accept", "application/json")
       .addHeader("Authorization", "Bearer " + apiToken)
       .build();
-
     return client.newCall(request).execute();
   }
 
@@ -61,7 +57,7 @@ public class MovieService {
       .addHeader("accept", "application/json")
       .addHeader("Authorization", "Bearer " + apiToken)
       .build();
-
     return client.newCall(request).execute();
   }
+
 }
