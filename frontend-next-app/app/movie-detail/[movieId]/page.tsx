@@ -4,6 +4,7 @@ import Review from "@/components/Review";
 import { getMovieDetail } from "@/lib/api/movieApi";
 import Image from "next/image";
 import getReviews from "@/lib/api/reviewApi";
+import ReviewPost from "@/components/Review/ReviewPost";
 
 export default async function MovieDetailPage({
   params: { movieId },
@@ -11,8 +12,6 @@ export default async function MovieDetailPage({
   params: { movieId: number };
 }) {
   const movie = await getMovieDetail(movieId);
-  // console.log("movie", movie);
-
   const reviews = await getReviews(movieId);
 
   return (
@@ -70,37 +69,7 @@ export default async function MovieDetailPage({
         </section>
 
         <Review reviews={reviews} />
-
-        <section id="add-review" className={styles.addReview}>
-          <div className={styles.container}>
-            <h2>리뷰 작성하기</h2>
-            <form id="review-form">
-              <label htmlFor="review-title">제목:</label>
-              <input
-                type="text"
-                id="review-title"
-                name="title"
-                placeholder="리뷰 제목 (선택 사항)"
-              />
-              <label htmlFor="review-rating">평점:</label>
-              <select id="review-rating" name="rating" required>
-                <option value="5">5점</option>
-                <option value="4">4점</option>
-                <option value="3">3점</option>
-                <option value="2">2점</option>
-                <option value="1">1점</option>
-              </select>
-              <label htmlFor="review-text">리뷰:</label>
-              <textarea
-                id="review-text"
-                name="text"
-                rows={4}
-                required
-              ></textarea>
-              <button type="submit">리뷰 남기기</button>
-            </form>
-          </div>
-        </section>
+        <ReviewPost movieId={movieId} />
       </main>
     </>
   );
