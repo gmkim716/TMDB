@@ -1,12 +1,14 @@
 package com.TMDB.backend.Post;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PostService {
@@ -22,6 +24,12 @@ public class PostService {
   @Transactional(readOnly = true)
   public List<PostDto> postListByCategory(Long categoryId) {
     List<Post> posts = postRepository.findByCategoryId(categoryId);
+    return posts.stream().map(PostDto::new).toList();
+  }
+
+  @Transactional(readOnly = true)
+  public List<PostDto> postListByMovieId(Long movieId) {
+    List<Post> posts = postRepository.findByMovieId(movieId);
     return posts.stream().map(PostDto::new).toList();
   }
 
