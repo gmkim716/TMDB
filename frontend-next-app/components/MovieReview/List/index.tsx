@@ -1,4 +1,4 @@
-import ReviewItem from "../ReviewItem";
+import ReviewItem from "../Item";
 
 export default function ReviewList({ reviews }: { reviews: Review[] }) {
   return (

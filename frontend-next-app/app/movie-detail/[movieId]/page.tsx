@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./MovieDetailPage.module.css"; // CSS 모듈 파일 import
-import Review from "@/components/Review";
 import { getMovieDetail } from "@/lib/api/movieApi";
 import getReviews from "@/lib/api/reviewApi";
-import ReviewPost from "@/components/Review/ReviewPost";
 import MovieInfo from "@/components/MovieInfo";
 import MovieCast from "@/components/MovieCast";
+import MovieVideo from "@/components/MovieVideo/List";
+import Review from "@/components/MovieReview";
+import ReviewWriteForm from "@/components/MovieReview/WriteForm";
 
 export default async function MovieDetailPage({
   params: { movieId },
@@ -28,41 +28,11 @@ export default async function MovieDetailPage({
           vote_average={movie.vote_average}
           overview={movie.overview}
         />
-
         <MovieCast movieId={movieId} />
-
-        <section id="youtube-videos" className={styles.youtubeVideos}>
-          <div className={styles.container}>
-            <h2>관련 유튜브 영상</h2>
-            <div id="video-list">
-              {/* 유튜브 영상 리스트가 여기에 로드됩니다 */}
-            </div>
-          </div>
-        </section>
-
+        <MovieVideo movieId={movieId} />
         <Review reviews={reviews} />
-        <ReviewPost movieId={movieId} />
+        <ReviewWriteForm movieId={movieId} />
       </main>
     </>
   );
 }
-
-// function setReviewsPerPage() {
-//   // 여기에 로직을 추가하세요
-// }
-
-// function filterReviews(rating: number | string) {
-//   // 여기에 로직을 추가하세요
-// }
-
-// function toggleComments() {
-//   // 여기에 로직을 추가하세요
-// }
-
-// function prevPage() {
-//   // 여기에 로직을 추가하세요
-// }
-
-// function nextPage() {
-//   // 여기에 로직을 추가하세요
-// }

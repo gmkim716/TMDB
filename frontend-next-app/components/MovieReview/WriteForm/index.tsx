@@ -7,7 +7,7 @@ interface ReviewPostProps {
   movieId: number;
 }
 
-export default function ReviewPost({ movieId }: ReviewPostProps) {
+export default function ReviewWriteForm({ movieId }: ReviewPostProps) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState("2");

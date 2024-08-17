@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
-import Image from "next/image";
 
 export default function Header() {
   return (
@@ -17,13 +16,13 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href="#">Home</Link>
+              <Link href="#">홈</Link>
             </li>
             <li className={styles.li}>
-              <Link href="#">Series</Link>
+              <Link href="#">시리즈</Link>
             </li>
             <li className={styles.li}>
-              <Link href="#">MyPage</Link>
+              <Link href="#">마이페이지</Link>
             </li>
           </ul>
         </nav>

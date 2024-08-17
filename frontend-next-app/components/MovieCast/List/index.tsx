@@ -1,5 +1,5 @@
 import getCredit from "@/lib/api/creditApi";
-import MovieCastItem from "../MovieCastItem";
+import MovieCastItem from "../Item";
 import styles from "./MovieCastList.module.css";
 
 export default async function MovieCastList({ movieId }: { movieId: number }) {

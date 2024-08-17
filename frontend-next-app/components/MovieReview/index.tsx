@@ -1,5 +1,5 @@
 import styles from "./Review.module.css";
-import ReviewList from "./ReviewList";
+import ReviewList from "./List";
 
 export default function Review({ reviews }: { reviews: Review[] }) {
   return (
@@ -11,6 +11,7 @@ export default function Review({ reviews }: { reviews: Review[] }) {
             <label htmlFor="reviewsPerPage">보기:</label>
             {/* <select id="reviewsPerPage" onchange="setReviewsPerPage()"> */}
             <select id="reviewsPerPage">
+              <option value="scroll">스크롤</option>
               <option value="5">5개</option>
               <option value="10">10개</option>
               <option value="20">20개</option>
