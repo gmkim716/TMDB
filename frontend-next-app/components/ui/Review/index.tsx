@@ -1,7 +1,8 @@
 import styles from "./Review.module.css";
-import Image from "next/image";
 
-export default function Review() {
+export default function Review({ movieId }: { movieId: number }) {
+  const reviews = getReviews(movieId);
+
   return (
     <section id="reviews" className={styles.reviews}>
       <div className="container">
@@ -45,12 +46,12 @@ export default function Review() {
           <div className={styles.reviewItem}>
             <div className={styles.reviewHeader}>
               <div className={styles.userInfo}>
-                <Image
+                {/* <Image
                   src="/user-profile.jpg"
                   alt="User Profile"
                   width={300}
                   height={300}
-                />
+                /> */}
                 <p>Username</p>
               </div>
               <div className={styles.reviewActions}>

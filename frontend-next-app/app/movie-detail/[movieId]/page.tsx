@@ -1,14 +1,52 @@
 import React from "react";
 import styles from "./MovieDetailPage.module.css"; // CSS 모듈 파일 import
 import Review from "@/components/ui/Review";
+import { getMovieDetail } from "@/lib/api/movieApi";
+import Image from "next/image";
 
-export default function MovieDetailPage() {
+export default async function MovieDetailPage({
+  params: { movieId },
+}: {
+  params: { movieId: number };
+}) {
+  const movie = await getMovieDetail(movieId);
+  console.log("movie", movie);
+
   return (
     <>
       <main>
         <section id="movie-info" className={styles.movieInfo}>
-          <div className={styles.container}>
-            {/* 영화 상세 정보가 여기에 로드됩니다 */}
+          <div className="container">
+            <Image
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              className={styles.moviePoster}
+              width={300}
+              height={450}
+            />
+            <div className={styles.movieInfoDetails}>
+              <h1>{movie.title}</h1>
+              <p>
+                <strong>장르:</strong>{" "}
+                {movie.genres.map((genre) => genre.name).join(", ")}
+              </p>
+              <p>
+                <strong>상영 시간:</strong> {movie.runtime}분
+              </p>
+              <p>
+                {/* popularity */}
+                <strong>인기도:</strong> {movie.popularity}
+              </p>
+              <p>
+                <strong>개봉일:</strong> {movie.release_date}
+              </p>
+              <p>
+                <strong>평점:</strong> {movie.vote_average}
+              </p>
+              <p>
+                <strong>줄거리:</strong> {movie.overview}
+              </p>
+            </div>
           </div>
         </section>
 
@@ -28,7 +66,7 @@ export default function MovieDetailPage() {
           </div>
         </section>
 
-        <Review />
+        <Review movieId={movieId} />
 
         <section id="add-review" className={styles.addReview}>
           <div className={styles.container}>

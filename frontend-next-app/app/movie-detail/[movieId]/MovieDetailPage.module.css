@@ -1,41 +1,5 @@
 /* MovieDetailPage.module.css */
 
-/* 공통 스타일 */
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.header {
-  background-color: #1c1c1c;
-  border-bottom: 2px solid #e62429;
-  padding: 20px 0;
-}
-
-.logo img {
-  height: 60px;
-}
-
-/* nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-} */
-
-.navLink {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-left: 30px;
-}
-
-.navLink:hover {
-  color: #e62429;
-}
-
 /* 영화 정보 섹션 */
 .movieInfo {
   padding: 50px 0;
