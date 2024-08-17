@@ -1,60 +1,3 @@
-.reviews {
-  padding: 50px 0;
-}
-
-.reviews h2 {
-  font-size: 2em;
-  color: #e62429;
-  margin-bottom: 20px;
-}
-
-.reviewControls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.paginationOptions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#reviewsPerPage {
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-
-.filterOptions {
-  display: flex;
-  gap: 10px;
-}
-
-.filterButton {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.filterButton:hover,
-.filterButton.active {
-  background-color: #e62429;
-}
-
-/* #review-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-} */
-
 .reviewItem {
   background-color: #2a2a2a;
   padding: 15px;
@@ -69,6 +12,13 @@
   margin-bottom: 10px;
 }
 
+.reviewTitle {
+  font-size: 1.2em;
+  color: #e62429;
+  flex-grow: 1; /* 1: 항목이 남는 공간을 차지하고, 컨테이너 안의 다른 항목과 균등하게 공간이 배분 */
+  text-align: left;
+}
+
 .reviewHeader .userInfo {
   display: flex;
   align-items: center;
@@ -78,18 +28,7 @@
 .reviewHeader .reviewActions {
   display: flex;
   gap: 10px;
-}
-
-.reviewHeader .userInfo img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-}
-
-.reviewHeader .userInfo p {
-  margin: 0;
-  font-size: 1em;
+  align-items: center;
 }
 
 .reviewHeader .reviewActions button {

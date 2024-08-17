@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./MovieDetailPage.module.css"; // CSS 모듈 파일 import
-import Review from "@/components/ui/Review";
+import Review from "@/components/Review";
 import { getMovieDetail } from "@/lib/api/movieApi";
 import Image from "next/image";
+import getReviews from "@/lib/api/reviewApi";
 
 export default async function MovieDetailPage({
   params: { movieId },
@@ -10,7 +11,9 @@ export default async function MovieDetailPage({
   params: { movieId: number };
 }) {
   const movie = await getMovieDetail(movieId);
-  console.log("movie", movie);
+  // console.log("movie", movie);
+
+  const reviews = await getReviews(movieId);
 
   return (
     <>
@@ -66,7 +69,7 @@ export default async function MovieDetailPage({
           </div>
         </section>
 
-        <Review movieId={movieId} />
+        <Review reviews={reviews} />
 
         <section id="add-review" className={styles.addReview}>
           <div className={styles.container}>

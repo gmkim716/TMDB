@@ -8,7 +8,7 @@ async function fetchMovieDetail(movieId: number) {
     }
   );
   if (!response.ok) {
-    throw new Error("Failed to fetch movie detail");
+    throw new Error("영화 정보를 불러오는데 실패했습니다.");
   }
   const movie = await response.json();
   return movie;
