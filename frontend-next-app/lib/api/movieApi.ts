@@ -1,9 +1,13 @@
+const TMDB_API = process.env.NEXT_PUBLIC_TMDB_API;
+const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+const LANGUAGE = process.env.NEXT_PUBLIC_TMDB_API_LANGUAGE;
+
 async function fetchMovieDetail(movieId: number) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?language=${process.env.NEXT_PUBLIC_TMDB_API_LANGUAGE}`,
+    `${TMDB_API}/movie/${movieId}?language=${LANGUAGE}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+        Authorization: `Bearer ${API_KEY}`,
       },
     }
   );

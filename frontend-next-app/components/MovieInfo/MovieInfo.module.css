@@ -1,0 +1,36 @@
+.movieInfo {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+.container {
+  display: flex; /* Flexbox를 사용하여 포스터와 영화 정보를 가로로 배치 */
+  align-items: flex-start; /* 포스터와 영화 정보의 상단을 맞추기 위해 사용 */
+  gap: 20px; /* 포스터와 영화 정보 사이의 간격 조절 */
+}
+
+.movieContent {
+  display: flex; /* 이미지와 영화 정보를 가로로 배치 */
+  align-items: flex-start; /* 상단 맞춤 */
+  gap: 40px; /* 이미지와 영화 정보 사이의 간격 */
+}
+
+.moviePoster {
+  flex-shrink: 0; /* 포스터 크기가 줄어들지 않도록 고정 */
+  border-radius: 10px; /* 포스터에 약간의 둥근 모서리를 추가 (선택 사항) */
+}
+
+.movieInfoDetails {
+  color: #fff; /* 영화 정보 텍스트 색상을 흰색으로 설정 */
+}
+
+.movieInfoDetails h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.movieInfoDetails p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

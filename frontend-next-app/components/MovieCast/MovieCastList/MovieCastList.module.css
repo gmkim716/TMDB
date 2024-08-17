@@ -1,0 +1,28 @@
+.castList {
+  display: flex;
+  overflow-x: auto; /* 가로 방향으로 넘칠 경우 스크롤 가능하게 설정 */
+  padding: 10px;
+  gap: 15px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 10px; /* 스크롤 시작 위치 조정 */
+  white-space: nowrap; /* 요소들이 한 줄에 유지되도록 설정 */
+}
+
+.castList > * {
+  flex: 0 0 auto; /* 요소가 화면 크기에 따라 줄어들거나 늘어나지 않도록 설정 */
+  width: 200px; /* 각 요소의 고정된 너비를 설정, 필요에 따라 조정 가능 */
+}
+
+.castList::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.castList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.castList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
