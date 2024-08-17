@@ -16,23 +16,21 @@ export default async function MovieDetailPage({
   const reviews = await getReviews(movieId);
 
   return (
-    <>
-      <main>
-        <MovieInfo
-          title={movie.title}
-          poster_path={movie.poster_path}
-          genres={movie.genres}
-          runtime={movie.runtime}
-          popularity={movie.popularity}
-          release_date={movie.release_date}
-          vote_average={movie.vote_average}
-          overview={movie.overview}
-        />
-        <MovieCast movieId={movieId} />
-        <MovieVideo movieId={movieId} />
-        <Review reviews={reviews} />
-        <ReviewWriteForm movieId={movieId} />
-      </main>
-    </>
+    <main>
+      <MovieInfo
+        title={movie.title}
+        poster_path={movie.poster_path}
+        genres={movie.genres}
+        runtime={movie.runtime}
+        popularity={movie.popularity}
+        release_date={movie.release_date}
+        vote_average={movie.vote_average}
+        overview={movie.overview}
+      />
+      <MovieCast movieId={movieId} />
+      <MovieVideo movieId={movieId} />
+      <Review reviews={reviews.content} />
+      <ReviewWriteForm movieId={movieId} />
+    </main>
   );
 }

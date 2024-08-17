@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,8 +32,11 @@ public class PostController {
   }
 
   @GetMapping("/list/movie/{movieId}")
-  public ResponseEntity<List<PostDto>> postListByMovieId(@PathVariable Long movieId) {
-    List<PostDto> posts = postService.postListByMovieId(movieId);
+  public ResponseEntity<Page<PostDto>> postListByMovieId(
+    @PathVariable Long movieId,
+    @RequestParam(defaultValue = "0") int page,
+    @RequestParam(defaultValue = "10") int size) {
+    Page<PostDto> posts = postService.getPostsByMovieId(movieId, page, size);
     return ResponseEntity.ok(posts);
   }
 

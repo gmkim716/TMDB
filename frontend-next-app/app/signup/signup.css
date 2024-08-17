@@ -11,7 +11,7 @@ body {
   color: #ffffff;
 }
 
-.auth-container {
+.authContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ body {
   box-sizing: border-box; /* 패딩 포함 박스 크기 설정 */
 }
 
-.auth-box {
+.authBox {
   background-color: #222222;
   padding: 40px;
   border-radius: 12px;
@@ -37,19 +37,19 @@ h2 {
   color: #ffffff; /* 제목 색상 */
 }
 
-.input-group {
+.inputGroup {
   margin-bottom: 20px;
   text-align: left;
 }
 
-.input-group label {
+.inputGroup label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: #dddddd; /* 입력 필드 레이블 색상 */
 }
 
-.input-group input {
+.inputGroup input {
   width: 100%;
   padding: 12px;
   border: 1px solid #444444;
@@ -60,7 +60,7 @@ h2 {
   box-sizing: border-box;
 }
 
-.input-group input:focus {
+.inputGroup input:focus {
   border-color: #e62429;
   outline: none;
   background-color: #3a3a3a;

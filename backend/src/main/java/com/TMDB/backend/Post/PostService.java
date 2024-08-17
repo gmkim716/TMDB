@@ -2,6 +2,9 @@ package com.TMDB.backend.Post;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,9 +31,10 @@ public class PostService {
   }
 
   @Transactional(readOnly = true)
-  public List<PostDto> postListByMovieId(Long movieId) {
-    List<Post> posts = postRepository.findByMovieId(movieId);
-    return posts.stream().map(PostDto::new).toList();
+  public Page<PostDto> getPostsByMovieId(Long movieId, int page, int size) {
+    Pageable pageable = PageRequest.of(page, size);
+    Page<Post> posts = postRepository.findByMovieId(movieId, pageable);
+    return posts.map(PostDto::new);
   }
 
   @Transactional
