@@ -1,0 +1,94 @@
+/* MovieCollectionPage.module.css */
+
+/* 공통 스타일 */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-left: 30px;
+}
+
+.navLink:hover {
+  color: #e62429;
+}
+
+/* 필터 옵션 섹션 */
+.filterOptions {
+  background-color: #121212;
+  padding: 20px 0;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filterButton {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterButton:hover {
+  background-color: #e62429;
+}
+
+.filterButton.active {
+  background-color: #e62429;
+}
+
+/* 영화 컬렉션 섹션 */
+.movieCollection {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+.movieCollection h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 푸터 */
+.footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footerContent a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerContent a:hover {
+  color: #e62429;
+}

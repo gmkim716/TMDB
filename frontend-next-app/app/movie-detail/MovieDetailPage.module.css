@@ -1,0 +1,215 @@
+/* MovieDetailPage.module.css */
+
+/* 공통 스타일 */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #1c1c1c;
+  border-bottom: 2px solid #e62429;
+  padding: 20px 0;
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-left: 30px;
+}
+
+.navLink:hover {
+  color: #e62429;
+}
+
+/* 영화 정보 섹션 */
+.movieInfo {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+/* 출연진 섹션 */
+.cast {
+  padding: 50px 0;
+  background-color: #121212;
+}
+
+.youtubeVideos {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+.reviews {
+  padding: 50px 0;
+  background-color: #121212;
+}
+
+.reviewControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.paginationOptions,
+.filterOptions {
+  display: flex;
+  align-items: center;
+}
+
+.filterButton {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterButton:hover {
+  background-color: #e62429;
+}
+
+.filterButton.active {
+  background-color: #e62429;
+}
+
+.reviewItem {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reviewHeader,
+.reviewBody,
+.reviewFooter {
+  margin-bottom: 10px;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo img {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.reviewActions button {
+  margin-left: 10px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.reviewActions button:hover {
+  background-color: #e62429;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleComments {
+  background-color: transparent;
+  border: none;
+  color: #e62429;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.likesDislikes {
+  display: flex;
+  align-items: center;
+}
+
+.likesDislikes button {
+  background-color: transparent;
+  border: none;
+  color: #e62429;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.commentsSection {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.addCommentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addCommentForm textarea {
+  resize: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.addCommentForm button {
+  align-self: flex-end;
+  background-color: #e62429;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.addReview {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+.footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footerContent a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerContent a:hover {
+  color: #e62429;
+}
