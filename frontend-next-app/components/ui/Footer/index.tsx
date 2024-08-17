@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer>
-      <div className={styles.container}>
+      <div className="container">
         <div className={styles.footerContent}>
           <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
           <p>

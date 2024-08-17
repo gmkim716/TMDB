@@ -1,21 +1,21 @@
-import styles from "./ReviewPost.module.css";
-import global from "../../../styles/global.module.css";
+import styles from "./Review.module.css";
 import Image from "next/image";
 
-export default function ReviewPost() {
+export default function Review() {
   return (
     <section id="reviews" className={styles.reviews}>
-      <div className={styles.container}>
+      <div className="container">
         <h2>관객 리뷰</h2>
-        <div className="review-controls">
+        <div className={styles.reviewControls}>
           <div className={styles.paginationOptions}>
-            {/* <label for="reviews-per-page">보기:</label> */}
-            {/* <select id="reviews-per-page" onchange="setReviewsPerPage()">
-                <option value="5">5개</option>
-                <option value="10">10개</option>
-                <option value="20">20개</option>
-                <option value="30">30개</option>
-              </select> */}
+            <label htmlFor="reviewsPerPage">보기:</label>
+            {/* <select id="reviewsPerPage" onchange="setReviewsPerPage()"> */}
+            <select id="reviewsPerPage">
+              <option value="5">5개</option>
+              <option value="10">10개</option>
+              <option value="20">20개</option>
+              <option value="30">30개</option>
+            </select>
           </div>
           <div className={styles.filterOptions}>
             <button
@@ -45,7 +45,12 @@ export default function ReviewPost() {
           <div className={styles.reviewItem}>
             <div className={styles.reviewHeader}>
               <div className={styles.userInfo}>
-                <Image src="user-profile.jpg" alt="User Profile" />
+                <Image
+                  src="/user-profile.jpg"
+                  alt="User Profile"
+                  width={300}
+                  height={300}
+                />
                 <p>Username</p>
               </div>
               <div className={styles.reviewActions}>
@@ -54,19 +59,19 @@ export default function ReviewPost() {
               </div>
             </div>
 
-            <div className="reviewBody">
+            <div className={styles.reviewBody}>
               <h3>리뷰 제목</h3>
               <p>리뷰 내용</p>
             </div>
 
             <div className={styles.reviewFooter}>
               <button
-                className={styles.toogleComments}
+                className={styles.toggleComments}
                 // onclick="toggleComments(this)"
               >
                 댓글 보기
               </button>
-              <div className="likesDislikes">
+              <div className={styles.likesDislikes}>
                 <button>좋아요</button>
                 <span>15</span>
                 <button>싫어요</button>
@@ -91,7 +96,7 @@ export default function ReviewPost() {
                   id="new-comment"
                   rows={2}
                   placeholder="댓글을 입력하세요..."
-                ></textarea>
+                />
                 <button type="submit">댓글 남기기</button>
               </form>
             </div>

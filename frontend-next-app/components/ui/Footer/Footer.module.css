@@ -1,9 +1,7 @@
 /* Footer.module.css */
-.container {
+
+.footerContent {
   background-color: #1c1c1c;
   padding: 20px 0;
   text-align: center;
-}
-
-.footerContent {
 }

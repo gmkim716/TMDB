@@ -198,18 +198,3 @@
   padding: 50px 0;
   background-color: #1a1a1a;
 }
-
-.footer {
-  background-color: #1c1c1c;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footerContent a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footerContent a:hover {
-  color: #e62429;
-}

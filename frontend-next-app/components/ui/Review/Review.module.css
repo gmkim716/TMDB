@@ -49,50 +49,50 @@
   background-color: #e62429;
 }
 
-#review-list {
+/* #review-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
+} */
 
-.review-item {
+.reviewItem {
   background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
   position: relative;
 }
 
-.review-header {
+.reviewHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.review-header .userInfo {
+.reviewHeader .userInfo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.review-header .reviewActions {
+.reviewHeader .reviewActions {
   display: flex;
   gap: 10px;
 }
 
-.review-header .userInfo img {
+.reviewHeader .userInfo img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   object-fit: cover;
 }
 
-.review-header .userInfo p {
+.reviewHeader .userInfo p {
   margin: 0;
   font-size: 1em;
 }
 
-.review-header .reviewActions button {
+.reviewHeader .reviewActions button {
   background: none;
   border: none;
   color: #ffffff;
@@ -100,7 +100,7 @@
   font-size: 0.9em;
 }
 
-.review-header .reviewActions button:hover {
+.reviewHeader .reviewActions button:hover {
   color: #e62429;
 }
 
@@ -176,13 +176,13 @@
   margin-bottom: 10px;
 }
 
-.add-comment-form {
+.addCommentForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.add-comment-form textarea {
+.addCommentForm textarea {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -190,7 +190,7 @@
   color: #ffffff;
 }
 
-.add-comment-form button {
+.addCommentForm button {
   background-color: #e62429;
   color: #ffffff;
   border: none;
@@ -200,6 +200,6 @@
   transition: background-color 0.3s;
 }
 
-.add-comment-form button:hover {
+.addCommentForm button:hover {
   background-color: #ff4c4c;
 }

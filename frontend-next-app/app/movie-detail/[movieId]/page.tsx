@@ -1,12 +1,10 @@
 import React from "react";
 import styles from "./MovieDetailPage.module.css"; // CSS 모듈 파일 import
-import Header from "@/components/ui/Header";
-import ReviewPost from "@/components/ui/ReviewPost";
+import Review from "@/components/ui/Review";
 
 export default function MovieDetailPage() {
   return (
     <>
-      <Header />
       <main>
         <section id="movie-info" className={styles.movieInfo}>
           <div className={styles.container}>
@@ -30,7 +28,7 @@ export default function MovieDetailPage() {
           </div>
         </section>
 
-        <ReviewPost />
+        <Review />
 
         <section id="add-review" className={styles.addReview}>
           <div className={styles.container}>
