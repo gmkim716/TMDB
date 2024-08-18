@@ -1,5 +1,5 @@
 import styles from "./MovieCast.module.css";
-import MovieCastList from "./List";
+import MovieCastList from "./CastList";
 
 interface MovieCastProps {
   movieId: number;

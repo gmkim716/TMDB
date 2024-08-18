@@ -1,0 +1,31 @@
+/* MovieReviewDisplayOption.module.css */
+
+.paginationOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationOptions label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.paginationOptions select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #444444; /* 심플한 회색 테두리 */
+  background-color: #2a2a2a; /* 다크한 드롭다운 배경 */
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.paginationOptions select:hover {
+  background-color: #3a3a3a; /* 호버 시 약간 더 밝은 배경 */
+}
+
+.paginationOptions select:focus {
+  outline: none;
+}

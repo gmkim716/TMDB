@@ -1,0 +1,41 @@
+/* MovieReviewPaginationControl.module.css */
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.paginationControls button {
+  background-color: #e62429;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0 10px;
+}
+
+.paginationControls button:hover {
+  background-color: #b71c24;
+  transform: translateY(-2px);
+}
+
+.paginationControls button:disabled {
+  background-color: #444444;
+  cursor: not-allowed;
+}
+
+#current-page,
+#total-pages {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}

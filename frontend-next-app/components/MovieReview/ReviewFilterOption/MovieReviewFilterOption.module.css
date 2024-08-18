@@ -1,0 +1,19 @@
+.filterOptions {
+  display: flex;
+  gap: 10px;
+}
+
+.filterButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterButton:hover,
+.filterButton.active {
+  background-color: #e62429;
+}

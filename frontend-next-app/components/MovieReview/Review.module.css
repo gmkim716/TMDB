@@ -15,38 +15,12 @@
   margin-bottom: 20px;
 }
 
-.paginationOptions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 #reviewsPerPage {
   padding: 5px;
   border-radius: 5px;
   border: none;
   background-color: #2a2a2a;
   color: #ffffff;
-}
-
-.filterOptions {
-  display: flex;
-  gap: 10px;
-}
-
-.filterButton {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.filterButton:hover,
-.filterButton.active {
-  background-color: #e62429;
 }
 
 /* #review-list {

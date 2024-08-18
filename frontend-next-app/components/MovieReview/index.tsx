@@ -1,60 +1,80 @@
-import styles from "./Review.module.css";
-import ReviewList from "./List";
+"use client";
 
-export default function Review({ reviews }: { reviews: Review[] }) {
+import styles from "./Review.module.css";
+import ReviewList from "./ReviewList";
+import PaginationOption from "./ReviewDisplayOption";
+import FilterOption from "./ReviewFilterOption";
+import PaginationControl from "./ReviewPaginationControl";
+import getReviews from "@/lib/api/reviewApi";
+import { useEffect, useState } from "react";
+
+interface ReviewProps {
+  movieId: number;
+  initialReviews: Review[];
+  initialTotalPages: number;
+}
+
+export default function Review({
+  movieId,
+  initialReviews,
+  initialTotalPages,
+}: ReviewProps) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [reviewsPerPage, setReviewsPerPage] = useState("5");
+  const [reviews, setReviews] = useState(initialReviews);
+  const [totalPage, setTotalPage] = useState(initialTotalPages);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      // setLoading(true);
+      try {
+        const reviews = await getReviews(
+          movieId,
+          currentPage,
+          parseInt(reviewsPerPage)
+        );
+
+        console.log("reviews", reviews);
+        setReviews(reviews.content);
+        setTotalPage(reviews.total_pages);
+      } catch (error) {
+        console.error("리뷰 데이터를 조회하는데 싪패했습니다.", error);
+        // } finally {
+        // setLoading(false);
+      }
+    };
+    fetchReviews();
+  }, [movieId, currentPage, reviewsPerPage]);
+
   return (
     <section id="reviews" className={styles.reviews}>
       <div className="container">
         <h2>관객 리뷰</h2>
         <div className={styles.reviewControls}>
-          <div className={styles.paginationOptions}>
-            <label htmlFor="reviewsPerPage">보기:</label>
-            {/* <select id="reviewsPerPage" onchange="setReviewsPerPage()"> */}
-            <select id="reviewsPerPage">
-              <option value="scroll">스크롤</option>
-              <option value="5">5개</option>
-              <option value="10">10개</option>
-              <option value="20">20개</option>
-              <option value="30">30개</option>
-            </select>
-          </div>
-          <div className={styles.filterOptions}>
-            <button
-              className={`${styles.filterButton} active`}
-              // onClick={() => filterReviews('all')}
-            >
-              전체
-            </button>
-            {/* <button className="filterButton" onclick="filterReviews(5)">
-                5점
-              </button>
-              <button className="filterButton" onclick="filterReviews(4)">
-                4점
-              </button>
-              <button className="filterButton" onclick="filterReviews(3)">
-                3점
-              </button>
-              <button className="filterButton" onclick="filterReviews(2)">
-                2점
-              </button>
-              <button className="filterButton" onclick="filterReviews(1)">
-                1점
-              </button> */}
-          </div>
+          <PaginationOption
+            reviewsPerPage={reviewsPerPage}
+            setReviewsPerPage={setReviewsPerPage}
+          />
+          <FilterOption />
         </div>
-
         <ReviewList reviews={reviews} />
-
-        <div className={styles.paginationControls}>
-          {/* <button id="prev-page" onclick="prevPage()">
-            이전
-          </button> */}
-          <span id="current-page">1</span> / <span id="total-pages">1</span>
-          {/* <button id="next-page" onclick="nextPage()">
-            다음
-          </button> */}
-        </div>
+        <PaginationControl currentPage={currentPage} totalPage={totalPage} />
       </div>
     </section>
   );
+}
+
+// getServerSideProps 함수에서 초기 데이터와 총 페이지 수를 가져온다.
+export async function getServerSideProps(context: any) {
+  const movieId = context.params.movieId;
+  const initailReviews = await getReviews(parseInt(movieId), 0, 5);
+  const initialTotalPages = initailReviews.total_pages;
+
+  return {
+    props: {
+      movieId: parseInt(movieId),
+      initailReviews: initailReviews.content,
+      initialTotalPages,
+    },
+  };
 }
