@@ -31,7 +31,13 @@ public class PostService {
   }
 
   @Transactional(readOnly = true)
-  public Page<PostDto> getPostsByMovieId(Long movieId, int page, int size) {
+  public List<PostDto> postListByMovieId(Long movieId) {
+    List<Post> posts = postRepository.findByMovieId(movieId);
+    return posts.stream().map(PostDto::new).toList();
+  }
+
+  @Transactional(readOnly = true)
+  public Page<PostDto> postListByMovieId(Long movieId, int page, int size) {
     Pageable pageable = PageRequest.of(page, size);
     Page<Post> posts = postRepository.findByMovieId(movieId, pageable);
     return posts.map(PostDto::new);

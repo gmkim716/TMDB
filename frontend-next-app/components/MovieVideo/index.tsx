@@ -1,4 +1,4 @@
-import MovieVideoList from "./List";
+import MovieVideoList from "./VideoList";
 import styles from "./MovieVideo.module.css";
 
 export default function MovieVideo({ movieId }: { movieId: number }) {

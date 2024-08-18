@@ -1,6 +1,6 @@
 const LOCAL_API = process.env.NEXT_PUBLIC_LOCAL_BACKEND_API;
 
-async function fetchReviewList(movieId: number, page = 0, size = 5) {
+async function fetchReviewList(movieId: number, page = 0, size = 3) {
   try {
     const response = await fetch(
       `${LOCAL_API}/api/post/list/movie/${movieId}?page=${page}&size=${size}`

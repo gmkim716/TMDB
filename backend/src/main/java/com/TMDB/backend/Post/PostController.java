@@ -32,11 +32,15 @@ public class PostController {
   }
 
   @GetMapping("/list/movie/{movieId}")
-  public ResponseEntity<Page<PostDto>> postListByMovieId(
+  public ResponseEntity<?> postListByMovieId(
     @PathVariable Long movieId,
     @RequestParam(defaultValue = "0") int page,
     @RequestParam(defaultValue = "10") int size) {
-    Page<PostDto> posts = postService.getPostsByMovieId(movieId, page, size);
+    if (size == -1) {  // 전체 리스트 보기
+      List<PostDto> posts = postService.postListByMovieId(movieId);
+      return ResponseEntity.ok(posts);
+    }
+    Page<PostDto> posts = postService.postListByMovieId(movieId, page, size);
     return ResponseEntity.ok(posts);
   }
 
