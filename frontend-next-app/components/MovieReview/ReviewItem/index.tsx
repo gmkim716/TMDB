@@ -1,16 +1,27 @@
+import { useState } from "react";
 import styles from "./ReviewItem.module.css";
+import ReviewCommentList from "../CommentList";
+import ReviewCommentWriteForm from "../CommentWriteForm";
 
 interface ReviewItemProps {
+  reviewId: number;
   title: string;
   content: string;
   username: string;
 }
 
 export default function ReviewItem({
+  reviewId,
   title,
   content,
   username,
 }: ReviewItemProps) {
+  const [commentVisible, setCommentVisible] = useState(false);
+
+  const toggleComments = () => {
+    setCommentVisible(!commentVisible);
+  };
+
   return (
     <>
       <div className={styles.reviewItem}>
@@ -30,10 +41,7 @@ export default function ReviewItem({
         </div>
 
         <div className={styles.reviewFooter}>
-          <button
-            className={styles.toggleComments}
-            // onclick="toggleComments(this)"
-          >
+          <button className={styles.toggleComments} onClick={toggleComments}>
             댓글 보기
           </button>
           <div className={styles.likesDislikes}>
@@ -44,27 +52,13 @@ export default function ReviewItem({
           </div>
         </div>
 
-        <div className={styles.commentsSection}>
-          <div className={styles.comment}>
-            <p>
-              <strong>사용자1:</strong> 댓글 내용 1
-            </p>
+        {/* 댓글 섹션 */}
+        {commentVisible && (
+          <div className={styles.commentsSection}>
+            <ReviewCommentList reviewId={reviewId} />
+            <ReviewCommentWriteForm reviewId={reviewId} />
           </div>
-          <div className={styles.comment}>
-            <p>
-              <strong>사용자2:</strong> 댓글 내용 2
-            </p>
-          </div>
-          <form className={styles.addCommentForm}>
-            <label htmlFor="new-comment">댓글 남기기:</label>
-            <textarea
-              id="new-comment"
-              rows={2}
-              placeholder="댓글을 입력하세요..."
-            />
-            <button type="submit">댓글 남기기</button>
-          </form>
-        </div>
+        )}
       </div>
     </>
   );

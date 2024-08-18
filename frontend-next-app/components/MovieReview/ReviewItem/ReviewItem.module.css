@@ -104,7 +104,6 @@
 }
 
 .commentsSection {
-  display: none;
   margin-top: 20px;
 }
 
@@ -113,32 +112,4 @@
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-.addCommentForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.addCommentForm textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-
-.addCommentForm button {
-  background-color: #e62429;
-  color: #ffffff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.addCommentForm button:hover {
-  background-color: #ff4c4c;
 }

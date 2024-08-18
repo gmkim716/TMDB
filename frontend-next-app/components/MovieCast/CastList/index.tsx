@@ -1,4 +1,4 @@
-import getCredit from "@/lib/api/creditApi";
+import getCredit from "@/lib/api/credit";
 import MovieCastItem from "../CastItem";
 import styles from "./MovieCastList.module.css";
 

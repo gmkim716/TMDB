@@ -1,19 +1,20 @@
 import React from "react";
-import { getMovieDetail } from "@/lib/api/movieApi";
 import MovieInfo from "@/components/MovieInfo";
 import MovieCast from "@/components/MovieCast";
 import Review from "@/components/MovieReview";
-import ReviewWriteForm from "@/components/MovieReview/ReviewWriteForm";
 import MovieVideo from "@/components/MovieVideo";
 import { getReviews } from "@/lib/api/review";
+import { getMovieDetail } from "@/lib/api/movie";
+import ReviewWriteForm from "@/components/MovieReview/ReviewWriteForm";
 
 export default async function MovieDetailPage({
   params: { movieId },
 }: {
-  params: { movieId: number };
+  params: { movieId: string }; // info. number로 설정하더라도 동적 라우팅 경로에 의해 string으로 처리될 가능성이 있습니다. 예기치 않은 동작을 피하기 위해 string으로 선언하고 관리합니다.
 }) {
-  const movie = await getMovieDetail(movieId);
-  const initialReview = await getReviews(movieId, 0, 5);
+  const movieIdInt = parseInt(movieId);
+  const movie = await getMovieDetail(movieIdInt);
+  const reviews = await getReviews(movieIdInt, 0, 5);
 
   return (
     <main>
@@ -27,14 +28,10 @@ export default async function MovieDetailPage({
         vote_average={movie.vote_average}
         overview={movie.overview}
       />
-      <MovieCast movieId={movieId} />
-      <MovieVideo movieId={movieId} />
-      <Review
-        movieId={movieId}
-        initialReviews={initialReview.content}
-        initialTotalPages={initialReview.totalPages}
-      />
-      <ReviewWriteForm movieId={movieId} />
+      <MovieCast movieId={movieIdInt} />
+      <MovieVideo movieId={movieIdInt} />
+      <Review movieId={movieIdInt} />
+      <ReviewWriteForm movieId={movieIdInt} />
     </main>
   );
 }

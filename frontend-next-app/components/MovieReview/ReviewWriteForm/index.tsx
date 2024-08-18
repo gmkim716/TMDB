@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./ReviewPost.module.css";
 import { postReview } from "@/lib/api/review";
+import useReview from "@/hooks/useReview";
 
 interface ReviewPostProps {
   movieId: number;
@@ -12,6 +13,8 @@ export default function ReviewWriteForm({ movieId }: ReviewPostProps) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [rating, setRating] = useState("2");
+
+  const { fetchReviews } = useReview(movieId);
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -32,19 +35,20 @@ export default function ReviewWriteForm({ movieId }: ReviewPostProps) {
     console.log("리뷰를 제출했습니다");
 
     const newReview = {
-      movieId: movieId,
-      title,
-      content,
+      title: title,
+      movieId: Number(movieId),
+      content: content,
       rating: parseInt(rating),
-      username: "test_username", // todo: username 추가
+      userId: 1, // todo: userId 추가
       categoryId: 2, // review category = 2
     };
 
     try {
       const response = await postReview(newReview);
-      console.log(response);
+      fetchReviews();
     } catch (error) {
       console.error("Error:", error);
+      console.error("newReview:", newReview);
       alert(
         "리뷰를 제출하는 중에 문제가 발생했습니다. 나중에 다시 시도해 주세요."
       );
@@ -89,6 +93,7 @@ export default function ReviewWriteForm({ movieId }: ReviewPostProps) {
             <option value="3">3점</option>
             <option value="2">2점</option>
             <option value="1">1점</option>
+            <option value="0">0점</option>
           </select>
 
           <button type="submit" className={styles.button}>
