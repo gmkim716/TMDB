@@ -5,12 +5,12 @@ import ReviewList from "./ReviewList";
 import PaginationOption from "./ReviewDisplayOption";
 import FilterOption from "./ReviewFilterOption";
 import PaginationControl from "./ReviewPaginationControl";
-import getReviews from "@/lib/api/reviewApi";
 import { useEffect, useState } from "react";
+import { getReviews } from "@/lib/api/review";
 
 interface ReviewProps {
   movieId: number;
-  initialReviews: Review[];
+  initialReviews: ReviewDto[];
   initialTotalPages: number;
 }
 
@@ -19,28 +19,23 @@ export default function Review({
   initialReviews,
   initialTotalPages,
 }: ReviewProps) {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [reviewsPerPage, setReviewsPerPage] = useState("5");
+  const [currentPage, setCurrentPage] = useState(0); // 0번재 인덱스를 보여준다
+  const [reviewsPerPage, setReviewsPerPage] = useState("5"); // 기본으로 5개를 보여준다
   const [reviews, setReviews] = useState(initialReviews);
   const [totalPage, setTotalPage] = useState(initialTotalPages);
 
   useEffect(() => {
     const fetchReviews = async () => {
-      // setLoading(true);
       try {
         const reviews = await getReviews(
           movieId,
           currentPage,
           parseInt(reviewsPerPage)
         );
-
-        console.log("reviews", reviews);
         setReviews(reviews.content);
-        setTotalPage(reviews.total_pages);
+        setTotalPage(reviews.totalPages);
       } catch (error) {
         console.error("리뷰 데이터를 조회하는데 싪패했습니다.", error);
-        // } finally {
-        // setLoading(false);
       }
     };
     fetchReviews();
@@ -62,19 +57,4 @@ export default function Review({
       </div>
     </section>
   );
-}
-
-// getServerSideProps 함수에서 초기 데이터와 총 페이지 수를 가져온다.
-export async function getServerSideProps(context: any) {
-  const movieId = context.params.movieId;
-  const initailReviews = await getReviews(parseInt(movieId), 0, 5);
-  const initialTotalPages = initailReviews.total_pages;
-
-  return {
-    props: {
-      movieId: parseInt(movieId),
-      initailReviews: initailReviews.content,
-      initialTotalPages,
-    },
-  };
 }

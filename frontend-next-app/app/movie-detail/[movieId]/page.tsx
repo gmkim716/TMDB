@@ -1,11 +1,11 @@
 import React from "react";
 import { getMovieDetail } from "@/lib/api/movieApi";
-import getReviews from "@/lib/api/reviewApi";
 import MovieInfo from "@/components/MovieInfo";
 import MovieCast from "@/components/MovieCast";
 import Review from "@/components/MovieReview";
 import ReviewWriteForm from "@/components/MovieReview/ReviewWriteForm";
 import MovieVideo from "@/components/MovieVideo";
+import { getReviews } from "@/lib/api/review";
 
 export default async function MovieDetailPage({
   params: { movieId },
@@ -13,7 +13,7 @@ export default async function MovieDetailPage({
   params: { movieId: number };
 }) {
   const movie = await getMovieDetail(movieId);
-  // const reviews = await getReviews(movieId);
+  const initialReview = await getReviews(movieId, 0, 5);
 
   return (
     <main>
@@ -29,7 +29,11 @@ export default async function MovieDetailPage({
       />
       <MovieCast movieId={movieId} />
       <MovieVideo movieId={movieId} />
-      <Review movieId={movieId} />
+      <Review
+        movieId={movieId}
+        initialReviews={initialReview.content}
+        initialTotalPages={initialReview.totalPages}
+      />
       <ReviewWriteForm movieId={movieId} />
     </main>
   );

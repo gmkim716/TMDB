@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./ReviewPost.module.css";
+import { postReview } from "@/lib/api/review";
 
 interface ReviewPostProps {
   movieId: number;
@@ -30,35 +31,24 @@ export default function ReviewWriteForm({ movieId }: ReviewPostProps) {
     event.preventDefault();
     console.log("리뷰를 제출했습니다");
 
-    // const newReview = {
-    //   title,
-    //   content,
-    //   rating: parseInt(rating),
-    // };
+    const newReview = {
+      movieId: movieId,
+      title,
+      content,
+      rating: parseInt(rating),
+      username: "test_username", // todo: username 추가
+      categoryId: 2, // review category = 2
+    };
 
-    // try {
-    //   const response = await fetch(`/api/reviews/${movieId}`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(newReview),
-    //   });
-
-    //   if (response.ok) {
-    //     alert(`${movieId} 리뷰를 제출했습니다`);
-    //     setTitle("");
-    //     setContent("");
-    //     setRating("2");
-    //   } else {
-    //     alert("리뷰를 제출하는 중에 문제가 발생했습니다");
-    //   }
-    // } catch (error) {
-    //   console.error("Error:", error);
-    //   alert(
-    //     "리뷰를 제출하는 중에 문제가 발생했습니다. 나중에 다시 시도해 주세요."
-    //   );
-    // }
+    try {
+      const response = await postReview(newReview);
+      console.log(response);
+    } catch (error) {
+      console.error("Error:", error);
+      alert(
+        "리뷰를 제출하는 중에 문제가 발생했습니다. 나중에 다시 시도해 주세요."
+      );
+    }
   };
 
   return (

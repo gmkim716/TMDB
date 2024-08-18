@@ -17,6 +17,9 @@ export default function PaginationControl({
     console.log("nextPage");
   };
 
+  // todo: totalPage NaN 해결
+  console.log("currentPage", currentPage, "totalPage", totalPage);
+
   return (
     <div className={styles.paginationControls}>
       <button id="prev-page" onClick={handlePrevButton}>

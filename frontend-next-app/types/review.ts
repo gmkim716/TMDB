@@ -1,5 +1,4 @@
-interface Review {
-  id: number;
+interface ReviewDto {
   movieId: number;
   title: string;
   content: string;
