@@ -1,5 +1,5 @@
 import { getReviews } from "@/lib/api/review";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function useReview(movieId: number) {
   const [currentPage, setCurrentPage] = useState(0); // 0번재 인덱스를 보여준다
@@ -7,7 +7,7 @@ export default function useReview(movieId: number) {
   const [reviews, setReviews] = useState<ReviewDto[]>([]);
   const [totalPage, setTotalPage] = useState(0);
 
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       const reviews = await getReviews(
         movieId,
@@ -19,11 +19,11 @@ export default function useReview(movieId: number) {
     } catch (error) {
       console.error("리뷰 데이터를 조회하는데 실패했습니다.", error);
     }
-  };
+  }, [movieId, currentPage, reviewsPerPage]);
 
   useEffect(() => {
     fetchReviews();
-  }, [movieId, reviewsPerPage]);
+  }, [movieId, reviewsPerPage, fetchReviews]);
 
   return {
     currentPage,

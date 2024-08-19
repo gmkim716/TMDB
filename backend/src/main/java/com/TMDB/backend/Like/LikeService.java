@@ -2,8 +2,8 @@ package com.TMDB.backend.Like;
 
 import com.TMDB.backend.Comment.Comment;
 import com.TMDB.backend.Comment.CommentRepository;
-import com.TMDB.backend.Post.Post;
-import com.TMDB.backend.Post.PostRepository;
+import com.TMDB.backend.Review.Review;
+import com.TMDB.backend.Review.ReviewRepository;
 import com.TMDB.backend.User.User;
 import com.TMDB.backend.User.UserRepository;
 import lombok.AllArgsConstructor;
@@ -18,32 +18,32 @@ public class LikeService {
 
   private final LikeRepository likeRepository;
   private final UserRepository userRepository;
-  private final PostRepository postRepository;
+  private final ReviewRepository reviewRepository;
   private final CommentRepository commentRepository;
 
   @Transactional
-  public void likePost(Long userId, Long postId) {
+  public void likeReview(Long userId, Long reviewId) {
     User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
-    Post post = postRepository.findById(postId).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+    Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
 
-    boolean alreadyLiked = likeRepository.existsByUserAndPost(user, post);
+    boolean alreadyLiked = likeRepository.existsByUserAndReview(user, review);
     if (alreadyLiked) {
       throw new IllegalArgumentException("이미 좋아요를 누른 게시글입니다.");
     }
 
     Like like = Like.builder()
       .user(user)
-      .post(post)
+      .review(review)
       .createdAt(LocalDateTime.now())
       .build();
     likeRepository.save(like);
   }
 
   @Transactional
-  public void unlikePost(Long userId, Long postId) {
+  public void unlikeReview(Long userId, Long reviewId) {
     User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
-    Post post = postRepository.findById(postId).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
-    Like like = likeRepository.findByUserAndPost(user, post).orElseThrow(() -> new IllegalArgumentException("해당 좋아요가 없습니다."));
+    Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+    Like like = likeRepository.findByUserAndReview(user, review).orElseThrow(() -> new IllegalArgumentException("해당 좋아요가 없습니다."));
 
     likeRepository.delete(like);
   }

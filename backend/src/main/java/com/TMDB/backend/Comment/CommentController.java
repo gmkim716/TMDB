@@ -2,10 +2,10 @@ package com.TMDB.backend.Comment;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -14,9 +14,13 @@ public class CommentController {
 
   private final CommentService commentService;
 
-  @PostMapping("/write")
-  public CommentDto write(@RequestBody @Valid CommentRegisterDto registerDto) {
-    CommentDto commentDto = commentService.write(registerDto);
-    return commentDto;
+  @GetMapping("/list/{reviewId}")
+  public ResponseEntity<List<CommentResponseDto>> getComments(@PathVariable Long reviewId) {
+    return ResponseEntity.ok(commentService.getCommentsByReviewId(reviewId));
+  }
+
+  @PostMapping("/write/{reviewId}")
+  public ResponseEntity<CommentResponseDto> postComment(@PathVariable Long reviewId, @RequestBody @Valid CommentWriteDto registerDto) {
+    return ResponseEntity.status(201).body(commentService.writeComment(reviewId, registerDto));
   }
 }

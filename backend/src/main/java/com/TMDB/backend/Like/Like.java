@@ -1,7 +1,7 @@
 package com.TMDB.backend.Like;
 
 import com.TMDB.backend.Comment.Comment;
-import com.TMDB.backend.Post.Post;
+import com.TMDB.backend.Review.Review;
 import com.TMDB.backend.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,8 +28,8 @@ public class Like {
   private User user;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_id", nullable = false)
-  private Post post;
+  @JoinColumn(name = "review_id", nullable = false)
+  private Review review;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "comment_id")

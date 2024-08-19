@@ -1,8 +1,11 @@
-package com.TMDB.backend.Post;
+package com.TMDB.backend.Review;
 
 import com.TMDB.backend.Comment.Comment;
 import com.TMDB.backend.Like.Like;
+import com.TMDB.backend.User.User;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,12 +16,12 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "posts")
+@Table(name = "reviews")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Builder
-public class Post {
+public class Review {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,10 +30,12 @@ public class Post {
   private Long movieId;
   private String title;
 
+  @Min(0) @Max(5)
+  private Integer rating = 2;
+
   @Lob  // Large Object, 큰 덱스트나 바이너리 데이너를 저장
   private String content;
 
-  private Long writerId;
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 
@@ -43,12 +48,16 @@ public class Post {
   private Long categoryId;
 
   @Enumerated(EnumType.STRING)
-  private PostStatus status;
+  private ReviewStatus status;
 
-  @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
+
+  @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Comment> comments;
 
-  @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<Like> likesSet;
 
 }

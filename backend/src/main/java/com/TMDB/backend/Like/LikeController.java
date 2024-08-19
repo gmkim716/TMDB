@@ -11,15 +11,15 @@ public class LikeController {
 
   private final LikeService likeService;
 
-  @PostMapping("/post/{postId}")
-  public Response likePost(@RequestParam Long userId, @PathVariable Long postId) {
-    likeService.likePost(userId, postId);
+  @PostMapping("/review/{reviewId}")
+  public Response likeReview(@RequestParam Long userId, @PathVariable Long reviewId) {
+    likeService.likeReview(userId, reviewId);
     return new Response("success", "게시글 좋아요 완료");
   }
 
-  @DeleteMapping("/post/{postId}")
-  public Response unlikePost(@RequestParam Long userId, @PathVariable Long postId) {
-    likeService.unlikePost(userId, postId);
+  @DeleteMapping("/review/{reviewId}")
+  public Response unlikeReview(@RequestParam Long userId, @PathVariable Long reviewId) {
+    likeService.unlikeReview(userId, reviewId);
     return new Response("success", "게시글 좋아요 취소 완료");
   }
 

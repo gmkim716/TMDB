@@ -2,7 +2,7 @@ const LOCAL_API = process.env.NEXT_PUBLIC_LOCAL_BACKEND_API;
 
 async function fetchComments(reviewId: number) {
   try {
-    const response = await fetch(`${LOCAL_API}/api/comment/${reviewId}`);
+    const response = await fetch(`${LOCAL_API}/api/comment/list/${reviewId}`);
     if (!response.ok) {
       throw new Error("댓글 목록을 불러오는데 실패했습니다.");
     }
@@ -13,9 +13,12 @@ async function fetchComments(reviewId: number) {
   }
 }
 
-async function fetchCommentWrite(reviewId: number, newComment: CommentDto) {
+async function fetchCommentWrite(
+  reviewId: number,
+  newComment: CommentWriteDto
+) {
   try {
-    const response = await fetch(`${LOCAL_API}/api/comment/${reviewId}`, {
+    const response = await fetch(`${LOCAL_API}/api/comment/write/${reviewId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,6 +38,9 @@ export async function getComments(reviewId: number) {
   return await fetchComments(reviewId);
 }
 
-export async function commentWrite(reviewId: number, newComment: CommentDto) {
+export async function commentWrite(
+  reviewId: number,
+  newComment: CommentWriteDto
+) {
   return await fetchCommentWrite(reviewId, newComment);
 }

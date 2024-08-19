@@ -1,6 +1,7 @@
 package com.TMDB.backend.Comment;
 
-import com.TMDB.backend.Post.Post;
+import com.TMDB.backend.Review.Review;
+import com.TMDB.backend.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +23,12 @@ public class Comment {
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_id", nullable = false)
-  private Post post;
+  @JoinColumn(name = "review_id", nullable = false)
+  private Review review;
 
-  private Long writerId;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
 
   @Lob
   private String content;

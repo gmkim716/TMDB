@@ -26,7 +26,7 @@ public class UserService {
       User user = User.builder()
         .email(registerDto.getEmail())
         .password(registerDto.getPassword())
-        .nickname(registerDto.getNickname())
+        .username(registerDto.getUsername())
         .createdAt(LocalDateTime.now())
         .role(Role.USER)
         .build();

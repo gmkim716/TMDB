@@ -1,6 +1,6 @@
 package com.TMDB.backend.Comment;
 
 public enum CommentStatus {
-  ACRIVE, DELETED,
+  ACTIVE, DELETED,
   PRIVATE,  // 비공개
 }

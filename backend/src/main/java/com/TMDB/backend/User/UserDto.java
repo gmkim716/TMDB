@@ -7,10 +7,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class UserDto {
   private String email;
-  private String nickname;
+  private String username;
 
   public UserDto(User user) {
     this.email = user.getEmail();
-    this.nickname = user.getNickname();
+    this.username = user.getUsername();
   }
 }

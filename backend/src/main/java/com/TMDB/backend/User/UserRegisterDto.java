@@ -18,5 +18,5 @@ public class UserRegisterDto {
   @EqualsAndHashCode.Exclude  // equals, hashCode로 인해 발생할 수 있는 에러를 방지
   private String passwordConfirmation;
 
-  private String nickname;
+  private String username;
 }

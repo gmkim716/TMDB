@@ -15,12 +15,3 @@ interface ReviewWriteDto {
   userId: number;
   categoryId: number;
 }
-
-{
-  "movieId": 0,
-  "title": "string",
-  "content": "string",
-  "userId": 0,
-  "categoryId": 0,
-  "rating": 0
-}

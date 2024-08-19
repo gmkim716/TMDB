@@ -1,10 +1,10 @@
 const LOCAL_API = process.env.NEXT_PUBLIC_LOCAL_BACKEND_API;
 
 // 리뷰 목록을 불러오는 fetch 함수
-async function fetchReviewList(movieId: number, page = 0, size = 3) {
+async function fetchReviewList(movieId: number, page: number, size: number) {
   try {
     const response = await fetch(
-      `${LOCAL_API}/api/post/list/movie/${movieId}?page=${page}&size=${size}`
+      `${LOCAL_API}/api/review/list/movie/${movieId}?page=${page}&size=${size}`
     );
     if (!response.ok) {
       throw new Error("리뷰 목록을 불러오는데 실패했습니다.");
@@ -17,9 +17,9 @@ async function fetchReviewList(movieId: number, page = 0, size = 3) {
 }
 
 // 리뷰를 추가하는 fetch 함수
-async function fetchReviewWrite(review: ReviewDto) {
+async function fetchReviewWrite(review: ReviewWriteDto) {
   try {
-    const response = await fetch(`${LOCAL_API}/api/post/`, {
+    const response = await fetch(`${LOCAL_API}/api/review/write`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,11 +36,7 @@ async function fetchReviewWrite(review: ReviewDto) {
   }
 }
 
-export async function getReviews(
-  movieId: number,
-  page?: number,
-  size?: number
-) {
+export async function getReviews(movieId: number, page: number, size: number) {
   return fetchReviewList(movieId, page, size);
 }
 

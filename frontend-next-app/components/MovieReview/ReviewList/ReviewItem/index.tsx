@@ -1,7 +1,10 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./ReviewItem.module.css";
-import ReviewCommentList from "../CommentList";
-import ReviewCommentWriteForm from "../CommentWriteForm";
+import ReviewCommentList from "./CommentList";
+import ReviewCommentWriteForm from "../../CommentWriteForm";
+import useComment from "@/hooks/useComment";
 
 interface ReviewItemProps {
   reviewId: number;
@@ -21,6 +24,12 @@ export default function ReviewItem({
   const toggleComments = () => {
     setCommentVisible(!commentVisible);
   };
+
+  const { comments, fetchComments, submitComment } = useComment(reviewId);
+
+  useEffect(() => {
+    fetchComments();
+  }, [reviewId]);
 
   return (
     <>
@@ -55,8 +64,13 @@ export default function ReviewItem({
         {/* 댓글 섹션 */}
         {commentVisible && (
           <div className={styles.commentsSection}>
-            <ReviewCommentList reviewId={reviewId} />
-            <ReviewCommentWriteForm reviewId={reviewId} />
+            <ReviewCommentList comments={comments} />
+            <ReviewCommentWriteForm
+              reviewId={reviewId}
+              onSubmit={() => {
+                fetchComments(); // 댓글 작성 후 댓글 목록을 갱신합니다.
+              }}
+            />
           </div>
         )}
       </div>
