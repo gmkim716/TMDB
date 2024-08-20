@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className={styles.footerContent}>
-          <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
+          <p>&copy; 2024 Marvel Chronicles. All rights reserved.</p>
           <p>
             <Link href="#" className="link">
               개인정보 처리방침

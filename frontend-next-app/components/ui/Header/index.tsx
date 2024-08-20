@@ -8,7 +8,7 @@ export default function Header() {
         <div className={styles.logo}>
           {/* <Image
             src="/marvelous_logo.png"
-            alt="Marvelous Times"
+            alt="Marvel Chronicles"
             width={100}
             height={300}
           /> */}
@@ -20,6 +20,9 @@ export default function Header() {
             </li>
             <li className={styles.li}>
               <Link href="/movie-collection">시리즈</Link>
+            </li>
+            <li className={styles.li}>
+              <Link href="/movie-theater">영화관</Link>
             </li>
             <li className={styles.li}>
               <Link href="#">마이페이지</Link>

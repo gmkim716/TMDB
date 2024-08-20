@@ -7,7 +7,7 @@ export default function HomePage() {
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.heroContent}>
-              <h1>The Marvelous Chronicles</h1>
+              <h1>The Marvel Chronicles</h1>
               <p>최신 마블 영화와 최고의 평가를 받은 영화를 만나보세요</p>
               <a href="#" className={styles.ctaButton}>
                 지금 탐색하기

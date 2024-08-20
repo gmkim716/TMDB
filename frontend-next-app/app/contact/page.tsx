@@ -16,7 +16,7 @@ export default function ContactPage() {
     recentChanges: [
       {
         // date: "2024-08-01",
-        // description: "Marvelous Chronicles v2.0 출시 - 다크 모드 지원 추가",
+        // description: "Marvel Chronicles v2.0 출시 - 다크 모드 지원 추가",
       },
       {
         date: "2024-08-20",
@@ -38,7 +38,7 @@ export default function ContactPage() {
           <p>Github: {developerInfo.email}</p>
           <InquireByEmailButton
             email={developerInfo.email}
-            subject="Marvelous Chronicles 문의하기"
+            subject="Marvel Chronicles 문의하기"
           />
         </div>
       </div>

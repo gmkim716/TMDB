@@ -1,20 +1,13 @@
-import React, { useState } from "react";
 import styles from "./MovieCollection.module.css"; // CSS 모듈 파일 import
+import Image from "next/image";
 
 export default function MovieCollectionPage() {
-  // const [activeFilter, setActiveFilter] = useState("story");
-
-  // const filterMovies = (filter: string) => {
-  //   setActiveFilter(filter);
-  //   // 필터에 따른 영화 로드 로직 추가
-  // };
-
   return (
     <>
       <header className={styles.header}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <img src="/marvelous_logo.png" alt="Marvelous Times" />
+            <Image src="/marvelous_logo.png" alt="Marvel Chronicles" />
           </div>
           <nav>
             <ul>
@@ -52,47 +45,15 @@ export default function MovieCollectionPage() {
         <section className={styles.filterOptions}>
           <div className={styles.container}>
             <div className={styles.buttonGroup}>
-              {/* <button
-                className={`${styles.filterButton} ${
-                  activeFilter === "story" ? styles.active : ""
-                }`}
-                onClick={() => filterMovies("story")}
-              >
-                스토리 흐름
-              </button> */}
-              {/* <button
-                className={`${styles.filterButton} ${
-                  activeFilter === "popularity" ? styles.active : ""
-                }`}
-                onClick={() => filterMovies("popularity")}
-              >
-                인기순
-              </button> */}
-              {/* <button
-                className={`${styles.filterButton} ${
-                  activeFilter === "genre" ? styles.active : ""
-                }`}
-                onClick={() => filterMovies("genre")}
-              >
-                장르별
-              </button> */}
-              {/* <button
-                className={`${styles.filterButton} ${
-                  activeFilter === "year" ? styles.active : ""
-                }`}
-                onClick={() => filterMovies("year")}
-              >
-                개봉연도별
-              </button> */}
-              {/* <button
-                className={`${styles.filterButton} ${
-                  activeFilter === "character" ? styles.active : ""
-                }`}
-                onClick={() => filterMovies("character")}
-              >
-                캐릭터별
-              </button> */}
+              {/* 필터 버튼들 여기에 위치 */}
             </div>
+          </div>
+        </section>
+
+        <section id="map-placeholder" className={styles.mapPlaceholder}>
+          <div className={styles.container}>
+            <h2>지도 영역</h2>
+            <p>이 영역에 지도가 표시될 예정입니다.</p>
           </div>
         </section>
 
@@ -109,7 +70,7 @@ export default function MovieCollectionPage() {
       <footer className={styles.footer}>
         <div className={styles.container}>
           <div className={styles.footerContent}>
-            <p>&copy; 2024 Marvelous Times. All rights reserved.</p>
+            <p>&copy; 2024 Marvel Chronicles. All rights reserved.</p>
             <p>
               <a href="#">개인정보 처리방침</a> | <a href="#">이용약관</a>
             </p>

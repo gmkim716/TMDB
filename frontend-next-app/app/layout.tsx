@@ -7,7 +7,7 @@ import Footer from "@/components/ui/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Marvelous Times",
+  title: "Marvel Chronicles",
   description: "Explore the latest Marvel movies and reviews",
 };
 
