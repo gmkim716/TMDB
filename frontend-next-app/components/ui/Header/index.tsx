@@ -16,13 +16,16 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href="#">홈</Link>
+              <Link href="/">홈</Link>
             </li>
             <li className={styles.li}>
-              <Link href="#">시리즈</Link>
+              <Link href="/movie-collection">시리즈</Link>
             </li>
             <li className={styles.li}>
               <Link href="#">마이페이지</Link>
+            </li>
+            <li className={styles.li}>
+              <Link href="/contact">개발자 정보</Link>
             </li>
           </ul>
         </nav>

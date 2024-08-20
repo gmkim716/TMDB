@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./ReviewPost.module.css";
+import styles from "./ReviewWriteForm.module.css";
 import { postReview } from "@/lib/api/review";
 import useReview from "@/hooks/useReview";
 

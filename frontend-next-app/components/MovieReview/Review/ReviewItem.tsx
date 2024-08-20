@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import styles from "./ReviewItem.module.css";
-import ReviewCommentList from "./CommentList";
-import ReviewCommentWriteForm from "../../CommentWriteForm";
+import ReviewCommentList from "../Comment/CommentList";
+import ReviewCommentWriteForm from "../CommentWriteForm";
 import useComment from "@/hooks/useComment";
 
 interface ReviewItemProps {

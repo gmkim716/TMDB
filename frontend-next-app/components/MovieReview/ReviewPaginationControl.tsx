@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./MovieReviewPaginationControl.module.css";
+import styles from "./ReviewPaginationControl.module.css";
 
 export default function PaginationControl({
   currentPage,

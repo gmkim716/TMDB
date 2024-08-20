@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Review.module.css";
-import ReviewList from "./ReviewList";
+import ReviewList from "./Review/ReviewList";
 import PaginationOption from "./ReviewDisplayOption";
 import FilterOption from "./ReviewFilterOption";
 import PaginationControl from "./ReviewPaginationControl";

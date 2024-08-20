@@ -1,10 +1,10 @@
 import React from "react";
-import MovieInfo from "@/components/MovieInfo";
 import MovieCast from "@/components/MovieCast";
 import Review from "@/components/MovieReview";
 import MovieVideo from "@/components/MovieVideo";
 import { getReviews } from "@/lib/api/review";
 import { getMovieDetail } from "@/lib/api/movie";
+import MovieInfo from "@/components/MovieInfo";
 import ReviewWriteForm from "@/components/MovieReview/ReviewWriteForm";
 
 export default async function MovieDetailPage({

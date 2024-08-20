@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./HomePage.module.css"; // CSS 모듈 import
 
 export default function HomePage() {

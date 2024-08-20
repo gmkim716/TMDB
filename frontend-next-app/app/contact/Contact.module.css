@@ -1,0 +1,133 @@
+.main {
+  max-width: 700px; /* 더 넓은 레이아웃으로 변경 */
+  margin: 40px auto;
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(var(--background-light-rgb));
+  color: rgb(var(--foreground-light-rgb));
+  border-radius: 15px; /* 부드러운 모서리 */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 더 큰 그림자로 깊이감 추가 */
+  text-align: center;
+}
+
+.h1 {
+  color: #e62429; /* 강조 색상 변경 */
+  font-size: 32px; /* 더 큰 타이틀 폰트 */
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase; /* 대문자로 변환 */
+  letter-spacing: 1.5px; /* 글자 간격 추가 */
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #e62429;
+  font-size: 28px; /* 섹션 타이틀을 크게 */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 3px solid #444444; /* 섹션 구분을 위한 더 두꺼운 밑줄 */
+  padding-bottom: 10px;
+}
+
+.developerInfo,
+.projectInfo {
+  background-color: #1c1c1e; /* 더 어두운 배경색으로 변경 */
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.developerInfo p,
+.projectInfo p,
+.projectInfo ul {
+  color: #e0e0e0; /* 밝은 회색으로 변경 */
+  font-size: 18px; /* 글자 크기 확대 */
+  line-height: 1.6; /* 가독성을 위한 줄 간격 */
+}
+
+.projectInfo h3 {
+  color: #ffffff;
+  font-size: 24px; /* 섹션 내 소제목 크기 확대 */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.projectInfo ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.projectInfo ul li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.emailButton {
+  padding: 15px 30px; /* 더 넉넉한 패딩 */
+  font-size: 18px; /* 폰트 크기 확대 */
+  color: #ffffff;
+  background-color: #e62429;
+  border: none;
+  border-radius: 8px; /* 더 둥근 모서리 */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  text-transform: uppercase; /* 대문자로 변환 */
+}
+
+.emailButton:hover {
+  background-color: #ff4c4c;
+  transform: translateY(-3px); /* 더 강한 효과 */
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 15px; /* 더 넉넉한 패딩 */
+  border: 1px solid #444444;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #333333;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #e62429;
+  background-color: #3a3a3a;
+  outline: none;
+}
+
+.submitButton {
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e62429;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+}
+
+.submitButton:hover {
+  background-color: #ff4c4c;
+  transform: translateY(-3px);
+}
+
+.thankYouMessage {
+  font-size: 20px;
+  color: #e62429;
+  text-align: center;
+  margin-top: 30px;
+}
