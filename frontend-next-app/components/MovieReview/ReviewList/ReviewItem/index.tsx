@@ -25,7 +25,7 @@ export default function ReviewItem({
     setCommentVisible(!commentVisible);
   };
 
-  const { comments, fetchComments, submitComment } = useComment(reviewId);
+  const { comments, fetchComments } = useComment(reviewId);
 
   useEffect(() => {
     fetchComments();
@@ -51,7 +51,7 @@ export default function ReviewItem({
 
         <div className={styles.reviewFooter}>
           <button className={styles.toggleComments} onClick={toggleComments}>
-            댓글 보기
+            {!commentVisible ? "댓글 보기" : "댓글 숨기기"}
           </button>
           <div className={styles.likesDislikes}>
             <button>좋아요</button>

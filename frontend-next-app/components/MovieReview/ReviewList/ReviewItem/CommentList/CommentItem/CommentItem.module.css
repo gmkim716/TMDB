@@ -1,4 +1,83 @@
 .comment {
   display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(
+    var(--background-dark-rgb),
+    0.8
+  ); /* 어두운 모드 배경과 일관된 배경 색상 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  color: rgb(var(--foreground-light-rgb)); /* 다크 모드 텍스트 색상과 일치 */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.commentHeader {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 16px;
+  color: #ffffff; /* 기본 텍스트 색상 */
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.content {
+  color: #dddddd; /* 밝은 그레이 색상 */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.commentFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.createdAt {
+  font-size: 14px;
+  color: #bbbbbb; /* 연한 그레이 */
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.likeButton,
+.dislikeButton {
+  background-color: transparent;
+  border: none;
+  color: #e62429; /* 강조된 빨간색 */
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.likeButton:hover,
+.dislikeButton:hover {
+  background-color: rgba(230, 36, 41, 0.1);
+  color: #ff4c4c;
+  transform: translateY(-2px);
+}
+
+.likeButton:focus,
+.dislikeButton:focus {
+  outline: none;
+}
+
+.likeCount,
+.dislikeCount {
+  font-size: 16px;
+  color: #ffffff; /* 기본 텍스트 색상 */
 }

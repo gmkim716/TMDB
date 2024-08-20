@@ -7,16 +7,18 @@ interface CommentItemProps {
 export default function ReviewCommentItem({ comment }: CommentItemProps) {
   return (
     <div className={styles.comment}>
-      <div>
-        <strong>{comment.username}:</strong> {comment.content}
-        <span>{comment.createdAt}</span>
+      <div className={styles.commentHeader}>
+        <strong className={styles.username}>{comment.username}</strong>
+        <span className={styles.createdAt}>{comment.createdAt}</span>
       </div>
-      <div>
-        {/* 좋아요/싫어요 버튼 */}
-        <button>좋아요</button>
-        <span>0</span>
-        <button>싫어요</button>
-        <span>0</span>
+      <div className={styles.commentFooter}>
+        <span className={styles.content}>{comment.content}</span>
+        <div className={styles.actions}>
+          <button className={styles.likeButton}>좋아요</button>
+          <span className={styles.likeCount}>0</span>
+          <button className={styles.dislikeButton}>싫어요</button>
+          <span className={styles.dislikeCount}>0</span>
+        </div>
       </div>
     </div>
   );
