@@ -22,7 +22,7 @@ export default function Header() {
               <Link href="/movie-collection">시리즈</Link>
             </li>
             <li className={styles.li}>
-              <Link href="/movie-theater">영화관</Link>
+              <Link href="/theater">영화관</Link>
             </li>
             <li className={styles.li}>
               <Link href="#">마이페이지</Link>
